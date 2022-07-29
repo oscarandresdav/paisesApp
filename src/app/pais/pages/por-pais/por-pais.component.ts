@@ -7,7 +7,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorPaisComponent {
 
-  termino: string = 'Hola mundo';
+  termino: string = 'ec';
   hayError: boolean = false;
 
   constructor( private paisService: PaisService ) { }
@@ -17,8 +17,10 @@ export class PorPaisComponent {
     console.log(this.termino);
 
     this.paisService.buscarPais(this.termino)
-      .subscribe( (resp) => {
-        console.log(resp);
+      .subscribe( (paises) => {
+        console.log(paises);
+
+
       }, (err) => {
         this.hayError = true;
       });
